@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_all_questions">
+
+    <fragment
+        android:id="@+id/nav_my_questions"
+        android:name="br.edu.ifrs.poa.ifhelptech.ui.fragments.myquestions.MyQuestionsFragment"
+        android:label="Minhas perguntas"
+        tools:layout="@layout/fragment_my_questions" />
+
+    <fragment
+        android:id="@+id/nav_all_questions"
+        android:name="br.edu.ifrs.poa.ifhelptech.ui.fragments.allquestions.AllQuestionsFragment"
+        android:label="Todas perguntas"
+        tools:layout="@layout/fragment_all_questions_fragment" />
+
+</navigation>

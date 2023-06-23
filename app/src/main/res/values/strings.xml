@@ -1,3 +1,37 @@
 <resources>
-    <string name="app_name">IfHelpTech</string>
+    <string name="app_name">If HelpTech</string>
+    <string name="bem_vindo_ao_if_helptech">Bem-vindo ao IF HelpTech</string>
+    <string name="entre_com_sua_conta_ou_crie_uma_nova_para_acessar_o_f_rum">Entre com sua conta ou crie uma nova para acessar o fórum</string>
+    <string name="acessar_conta">Acessar conta</string>
+    <string name="criar_nova_conta">Criar nova conta</string>
+    <string name="login">Email</string>
+    <string name="senha">Senha</string>
+    <string name="confirmar_senha">Confirmar senha</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="crie_uma_conta">Crie uma conta</string>
+    <string name="entre_para_acessar_sua_conta">Entre para acessar sua conta</string>
+    <string name="entrar">Entrar</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="sobre">Sobre</string>
+    <string name="sair">Sair</string>
+    <string name="todas_perguntas">Todas perguntas</string>
+    <string name="minhas_perguntas">Minhas perguntas</string>
+    <string name="t_tulo_da_pergunta">Título da pergunta</string>
+    <string name="titulo_da_pergunta">Título da pergunta</string>
+    <string name="descricao_da_pergunta">Descrição da pergunta</string>
+    <string name="topico_da_pergunta">Tópico da pergunta</string>
+    <string name="cadastrar_pergunta">Cadastrar pergunta</string>
+    <string name="compartilhar">Compartilhar</string>
+    <string name="editar">Editar</string>
+    <string name="deletar">deletar</string>
 </resources>
