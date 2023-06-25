@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
@@ -13,6 +14,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import br.edu.ifrs.poa.ifhelptech.R
+import br.edu.ifrs.poa.ifhelptech.database.FirebaseManager
 import br.edu.ifrs.poa.ifhelptech.databinding.ActivityHomeBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -49,6 +51,11 @@ class HomeActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         navView.setupWithNavController(navController)
+
+        val headerView = navView.getHeaderView(0)
+        val userEmailTextView: TextView = headerView.findViewById(R.id.nav_header_user_email)
+        val currentUser = mAuth.currentUser
+        userEmailTextView.text = "Olá, ${currentUser?.email}"
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

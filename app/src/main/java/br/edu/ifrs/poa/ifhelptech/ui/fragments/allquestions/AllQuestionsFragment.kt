@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.edu.ifrs.poa.ifhelptech.R
+import br.edu.ifrs.poa.ifhelptech.database.FirebaseManager
 import br.edu.ifrs.poa.ifhelptech.model.Question
 import br.edu.ifrs.poa.ifhelptech.ui.recyclerview.adapter.AllQuestionAdapter
 import com.google.firebase.database.DataSnapshot
@@ -33,7 +34,7 @@ class AllQuestionsFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
 
-        val database = FirebaseDatabase.getInstance()
+        val database = FirebaseManager.getDatabase()
         val myRef = database.getReference("perguntas")
 
         myRef.addValueEventListener(object : ValueEventListener {
@@ -42,7 +43,9 @@ class AllQuestionsFragment : Fragment() {
 
                 for (questionSnapshot in dataSnapshot.children) {
                     val question = questionSnapshot.getValue(Question::class.java)
+
                     question?.let {
+                        it.id = questionSnapshot.key!!
                         questionList.add(it)
                     }
                 }

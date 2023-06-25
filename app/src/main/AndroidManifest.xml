@@ -12,9 +12,13 @@
         android:theme="@style/Theme.IfHelpTech"
         tools:targetApi="31">
         <activity
-            android:name=".ui.activity.AddQuestionActivity"
+            android:name=".ui.fragments.myquestions.UpdateMyQuestionActivity"
             android:parentActivityName=".ui.activity.HomeActivity"
             android:exported="false" />
+        <activity
+            android:name=".ui.activity.AddQuestionActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.activity.HomeActivity" />
         <activity
             android:name=".ui.activity.HomeActivity"
             android:exported="false"
