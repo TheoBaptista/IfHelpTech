@@ -15,7 +15,10 @@ import br.edu.ifrs.poa.ifhelptech.database.FirebaseManager
 import br.edu.ifrs.poa.ifhelptech.model.Question
 import br.edu.ifrs.poa.ifhelptech.ui.recyclerview.adapter.MyQuestionAdapter
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ValueEventListener
 
 class MyQuestionsFragment : Fragment() {
 
@@ -42,7 +45,11 @@ class MyQuestionsFragment : Fragment() {
         myRef = database.getReference("perguntas")
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.my_questions_recycler_view)
-        myQuestionAdapter = MyQuestionAdapter(questionList,this@MyQuestionsFragment::onDeleteQuestion,this@MyQuestionsFragment::onUpdateQuestion)
+        myQuestionAdapter = MyQuestionAdapter(
+            questionList,
+            this@MyQuestionsFragment::onDeleteQuestion,
+            this@MyQuestionsFragment::onUpdateQuestion
+        )
         recyclerView.adapter = myQuestionAdapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 

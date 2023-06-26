@@ -1,9 +1,9 @@
 package br.edu.ifrs.poa.ifhelptech.ui.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifrs.poa.ifhelptech.R
 
 class IntroActivity : AppCompatActivity() {

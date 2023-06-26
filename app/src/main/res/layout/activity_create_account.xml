@@ -8,15 +8,15 @@
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/quicksand_bold"
         android:layout_margin="16dp"
+        android:fontFamily="@font/quicksand_bold"
         android:text="@string/crie_uma_conta"
         android:textColor="@color/blacklight"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/login"
-            android:inputType="textEmailAddress"/>
+            android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -45,13 +45,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:hint="@string/senha"
         app:counterEnabled="true"
         app:counterMaxLength="8"
-        android:hint="@string/senha"
-        app:passwordToggleEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_create_account_login">
+        app:layout_constraintTop_toBottomOf="@+id/activity_create_account_login"
+        app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/activity_create_account_password_TextInputEditText"
@@ -68,12 +68,12 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:hint="@string/confirmar_senha"
-        app:passwordToggleEnabled="true"
         app:counterEnabled="true"
         app:counterMaxLength="8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_create_account_password">
+        app:layout_constraintTop_toBottomOf="@+id/activity_create_account_password"
+        app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/activity_create_account_confirm_password_TextInputEditText"
@@ -90,15 +90,15 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_margin="16dp"
-        android:textAllCaps="false"
+        android:fontFamily="@font/quicksand_bold"
         android:text="@string/cadastrar"
+        android:textAllCaps="false"
         android:textColor="@color/white"
+        android:textSize="20sp"
         app:backgroundTint="@color/green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_create_account_confirm_password"
-        app:layout_constraintVertical_bias="1"
-        android:textSize="20sp"
-        android:fontFamily="@font/quicksand_bold"/>
+        app:layout_constraintVertical_bias="1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

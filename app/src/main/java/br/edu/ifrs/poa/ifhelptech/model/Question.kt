@@ -8,7 +8,9 @@ data class Question(
 ) {
 
     lateinit var id: String
+
     constructor() : this("", "", "", "")
+
     fun toMap(): Map<String, Any?> {
         return mapOf(
             "id" to id,

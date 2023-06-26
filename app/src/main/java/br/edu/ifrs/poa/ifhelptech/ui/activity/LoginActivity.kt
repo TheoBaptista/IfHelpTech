@@ -1,11 +1,11 @@
 package br.edu.ifrs.poa.ifhelptech.ui.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifrs.poa.ifhelptech.R
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
@@ -36,7 +36,6 @@ class LoginActivity : AppCompatActivity() {
             }
             auth = FirebaseAuth.getInstance()
         }
-
 
 
     }

@@ -1,19 +1,18 @@
 package br.edu.ifrs.poa.ifhelptech.ui.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifrs.poa.ifhelptech.R
 import br.edu.ifrs.poa.ifhelptech.model.Question
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import java.util.*
 
 class AddQuestionActivity : AppCompatActivity() {
     private lateinit var questionNameEditText: TextInputEditText
@@ -68,7 +67,7 @@ class AddQuestionActivity : AppCompatActivity() {
             questionTopic = questionTopic
         )
 
-        val questionId =  ""
+        val questionId = ""
         question.id = questionId
 
         myRef.child(questionId).setValue(question)
@@ -94,8 +93,8 @@ class AddQuestionActivity : AppCompatActivity() {
             isValid = false
         }
 
-        if (questionName.length > 40) {
-            questionNameEditText.error = "O título da pergunta não deve exceder 40 caracteres"
+        if (questionName.length > 50) {
+            questionNameEditText.error = "O título da pergunta não deve exceder 50 caracteres"
             isValid = false
         }
 
@@ -104,8 +103,9 @@ class AddQuestionActivity : AppCompatActivity() {
             isValid = false
         }
 
-        if (questionDescription.length > 100) {
-            questionDescriptionEditText.error = "A descrição da pergunta não deve exceder 100 caracteres"
+        if (questionDescription.length > 200) {
+            questionDescriptionEditText.error =
+                "A descrição da pergunta não deve exceder 200 caracteres"
             isValid = false
         }
 

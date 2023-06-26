@@ -1,6 +1,5 @@
 package br.edu.ifrs.poa.ifhelptech.ui.recyclerview.adapter
 
-import androidx.core.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +13,7 @@ class MyQuestionAdapter(
     private val questionList: List<Question>,
     private val onDeleteQuestion: (Question) -> Unit,
     private val onUpdateQuestion: (Question) -> Unit
-    ) : RecyclerView.Adapter<MyQuestionAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<MyQuestionAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
@@ -34,14 +33,16 @@ class MyQuestionAdapter(
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(question: Question) {
             val titleTextView = itemView.findViewById<TextView>(R.id.question_title_textview)
-            val descriptionTextView = itemView.findViewById<TextView>(R.id.question_description_textview)
+            val descriptionTextView =
+                itemView.findViewById<TextView>(R.id.question_description_textview)
             val topicTextView = itemView.findViewById<TextView>(R.id.question_topic_textview)
             val updateButton = itemView.findViewById<ImageButton>(R.id.update_button)
             val deleteButton = itemView.findViewById<ImageButton>(R.id.delete_button)
 
             titleTextView.text = question.questionTitle
             descriptionTextView.text = question.questionDescription
-            val topicLabel = itemView.context.getString(R.string.topic_label, question.questionTopic)
+            val topicLabel =
+                itemView.context.getString(R.string.topic_label, question.questionTopic)
             topicTextView.text = topicLabel
 
             updateButton.setOnClickListener {

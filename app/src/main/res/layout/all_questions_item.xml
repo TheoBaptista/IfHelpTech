@@ -5,7 +5,7 @@
     android:layout_margin="8dp"
     app:cardBackgroundColor="#ECECEC"
     app:cardCornerRadius="8dp"
-    app:cardElevation="8dp">
+    app:cardElevation="4dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,8 +19,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/quicksand_bold"
-            android:textColor="@color/blacklight"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/blacklight"
             android:textStyle="bold" />
 
         <TextView
@@ -29,9 +29,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/question_title_textview"
             android:layout_marginTop="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:fontFamily="@font/quicksand_bold"
-            android:textColor="@color/blacklight"  />
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/blacklight" />
 
         <TextView
             android:id="@+id/question_topic_textview"
@@ -39,9 +39,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/question_description_textview"
             android:layout_marginTop="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:fontFamily="@font/quicksand_bold"
-            android:textColor="@color/blacklight"  />
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/blacklight" />
 
         <TextView
             android:id="@+id/email_author_textview"
@@ -49,19 +49,18 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/question_topic_textview"
             android:layout_marginTop="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:fontFamily="@font/quicksand_bold"
-            android:textColor="@color/blacklight"  />
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/blacklight" />
 
         <ImageButton
             android:id="@+id/shared_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_share"
-            android:layout_marginTop="8dp"
             android:layout_below="@+id/email_author_textview"
+            android:layout_marginTop="8dp"
             android:contentDescription="@string/compartilhar"
-            />
+            android:src="@android:drawable/ic_menu_share" />
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

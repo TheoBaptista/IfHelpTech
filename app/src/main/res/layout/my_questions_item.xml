@@ -5,22 +5,22 @@
     android:layout_margin="8dp"
     app:cardBackgroundColor="#ECECEC"
     app:cardCornerRadius="8dp"
-    app:cardElevation="8dp">
+    app:cardElevation="4dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:cardCornerRadius="8dp"
         app:cardBackgroundColor="#ECECEC"
+        app:cardCornerRadius="8dp"
         app:cardElevation="8dp">
 
         <TextView
             android:id="@+id/question_title_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:fontFamily="@font/quicksand_bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/blacklight"
             android:textStyle="bold" />
 
@@ -30,8 +30,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/question_title_textview"
             android:layout_marginTop="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:fontFamily="@font/quicksand_bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/blacklight" />
 
         <TextView
@@ -40,8 +40,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/question_description_textview"
             android:layout_marginTop="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:fontFamily="@font/quicksand_bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="@color/blacklight" />
 
         <ImageButton

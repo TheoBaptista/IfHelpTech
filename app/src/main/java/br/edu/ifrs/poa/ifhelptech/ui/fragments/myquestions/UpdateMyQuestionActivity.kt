@@ -1,17 +1,18 @@
 package br.edu.ifrs.poa.ifhelptech.ui.fragments.myquestions
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.*
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
+import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifrs.poa.ifhelptech.R
 import br.edu.ifrs.poa.ifhelptech.database.FirebaseManager
 import br.edu.ifrs.poa.ifhelptech.model.Question
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 class UpdateMyQuestionActivity : AppCompatActivity() {
@@ -19,7 +20,7 @@ class UpdateMyQuestionActivity : AppCompatActivity() {
     private lateinit var questionNameEditText: TextInputEditText
     private lateinit var questionDescriptionEditText: TextInputEditText
     private lateinit var questionTopicEditText: AutoCompleteTextView
-    private lateinit var updateButton : Button
+    private lateinit var updateButton: Button
 
 
     companion object {
@@ -125,7 +126,7 @@ class UpdateMyQuestionActivity : AppCompatActivity() {
                     finish()
                 }
             })
-        }else{
+        } else {
             showErrorModal("")
         }
     }
