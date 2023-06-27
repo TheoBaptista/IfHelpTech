@@ -2,6 +2,7 @@ package br.edu.ifrs.poa.ifhelptech.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Patterns
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -33,37 +34,56 @@ class CreateAccountActivity : AppCompatActivity() {
             val senha = edtSenha.text.toString()
             val confSenha = edtConfSenha.text.toString()
 
-            if (email.isNotEmpty() && senha.isNotEmpty() && confSenha.isNotEmpty()) {
-                if (senha == confSenha) {
-                    if (senha.length <= 8) {
-                        auth.createUserWithEmailAndPassword(email, senha)
-                            .addOnCompleteListener(this) { task ->
-                                if (task.isSuccessful) {
-                                    val intent = Intent(this, LoginActivity::class.java)
-                                    startActivity(intent)
-                                    Toast.makeText(this, "Sucesso!", Toast.LENGTH_SHORT).show()
-                                } else {
-                                    Toast.makeText(
-                                        this,
-                                        "Erro ao cadastrar usuário!",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                }
-                            }
-                    } else {
-                        Toast.makeText(this, "Senha deve ter até 8 caracteres!", Toast.LENGTH_SHORT)
-                            .show()
+            if (isCadastroValido(email, senha, confSenha)) {
+                auth.createUserWithEmailAndPassword(email, senha)
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful) {
+                            val intent = Intent(this, LoginActivity::class.java)
+                            startActivity(intent)
+                            Toast.makeText(this, "Sucesso!", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(
+                                this,
+                                "Erro ao cadastrar usuário!",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
                     }
-                } else {
-                    Toast.makeText(
-                        this,
-                        "Senha e confirmação de senha devem ser iguais!",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            } else {
-                Toast.makeText(this, "Informe os dados para o cadastro!", Toast.LENGTH_SHORT).show()
             }
         }
     }
+
+    private fun isCadastroValido(email: String, senha: String, confSenha: String): Boolean {
+        if (email.isEmpty() || senha.isEmpty() || confSenha.isEmpty()) {
+            Toast.makeText(this, "Informe os dados para o cadastro!", Toast.LENGTH_SHORT).show()
+            return false
+        }
+
+        if (senha != confSenha) {
+            Toast.makeText(
+                this,
+                "Senha e confirmação de senha devem ser iguais!",
+                Toast.LENGTH_SHORT
+            ).show()
+            return false
+        }
+
+        if (senha.length > 8) {
+            Toast.makeText(this, "Senha deve ter até 8 caracteres!", Toast.LENGTH_SHORT).show()
+            return false
+        }
+
+        if (!isValidEmail(email)) {
+            Toast.makeText(this, "E-mail inválido!", Toast.LENGTH_SHORT).show()
+            return false
+        }
+
+        return true
+    }
+
+    private fun isValidEmail(email: String): Boolean {
+        val pattern = Patterns.EMAIL_ADDRESS
+        return pattern.matcher(email).matches()
+    }
 }
+

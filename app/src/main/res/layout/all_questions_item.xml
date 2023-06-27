@@ -60,7 +60,7 @@
             android:layout_below="@+id/email_author_textview"
             android:layout_marginTop="8dp"
             android:contentDescription="@string/compartilhar"
-            android:src="@android:drawable/ic_menu_share" />
+            android:src="@android:drawable/ic_menu_send" />
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

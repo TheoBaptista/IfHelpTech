@@ -51,9 +51,6 @@ class AllQuestionAdapter(private val questionList: List<Question>) :
                     data = Uri.parse("mailto:${question.authorEmail}")
                     putExtra(Intent.EXTRA_EMAIL, arrayOf(question.authorEmail))
                     putExtra(Intent.EXTRA_SUBJECT, "Resposta à pergunta: ${question.questionTitle}")
-                    putExtra(
-                        Intent.EXTRA_TEXT, "A resposta a essa pergunta é "
-                    )
                     type = "text/plain"
                 }
                 itemView.context.startActivity(Intent.createChooser(emailIntent, "Enviar email"))
