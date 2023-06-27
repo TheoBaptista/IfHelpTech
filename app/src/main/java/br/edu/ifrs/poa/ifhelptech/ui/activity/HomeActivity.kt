@@ -75,8 +75,7 @@ class HomeActivity : AppCompatActivity() {
             }
             R.id.action_logout -> {
                 mAuth.signOut()
-                val intent = Intent(this, IntroActivity::class.java)
-                startActivity(intent)
+                finish()
                 true
             }
             else -> super.onOptionsItemSelected(item)
